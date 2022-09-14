@@ -1,6 +1,3 @@
-
-
-
 let bcrypt=require('bcrypt');
 let User=require('../models/user');
 let jwt=require('jsonwebtoken');
