@@ -6,14 +6,19 @@ let jwt=require('jsonwebtoken');
 
 
 
-exports.postuserdata=async (req,res)=>{
+//handler for signup
+
+exports.signup=async (req,res)=>{
 
 let {name,email,phonenumber,pwd}=req.body;
 
 let password=await bcrypt.hash(pwd,10);
 
 User.create({
-    name,email,phonenumber,password
+    name,
+    email,
+    phonenumber,
+    password
 })
 .then(result=>{
 res.json({result,suc:true})
@@ -25,7 +30,9 @@ res.json({result,suc:true})
 
 
 
-exports.postlogin = async (req, res) => {
+//hanlder for login
+
+exports.signin = async (req, res) => {
   let { email, pwd } = req.body;
 
   let user=await User.findAll({where:{email:email}});

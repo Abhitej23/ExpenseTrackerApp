@@ -14,7 +14,7 @@ btnsubmit.addEventListener('click',(e)=>{
     pwd:pwd2
   }
 
-  axios.post("http://localhost:8400/login", obj)
+  axios.post("http://localhost:8400/signin", obj)
   .then(result=>{
     if(result.data.msg=='login successful'){
       localStorage.setItem('token',result.data.token);

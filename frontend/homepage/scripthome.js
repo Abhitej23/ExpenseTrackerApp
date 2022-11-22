@@ -131,7 +131,7 @@ function alertempty(e) {
 
 logout.addEventListener('click',()=>{
 
-  let result=  confirm("do you want to loggout ");
+  let result=  confirm("do you want to logout");
   if(result){
     localStorage.clear();
     location.replace('../login/login.html')
@@ -146,99 +146,9 @@ hidedrop.addEventListener("click", () => {
   dropoptions.style.display = "none";
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   let token = localStorage.getItem("token");
-
-//   axios
-//     .get("http://localhost:8400/getuserdata", {
-//       headers: { authorization: token },
-//     })
-//     .then((result) => {
-//       if (result.data.result[0].issubcribed == true) {
-//         subfeature.innerHTML = `
-//      <li class="text-dark" id="subscriptiontheme" >dark gray theme</li>
-//                   <li><a href="../leaderboard/board.html" id="leaderboard">leaderboard</a></li>
-//              <li><a href="../reportpage/report.html" id="report">report</a></li>
-
-//         `;
-
-//         let subscriptiontheme = document.querySelector("#subscriptiontheme");
-//         let leaderboard = document.querySelector("#leaderboard");
-//         let report = document.querySelector("#report");
-
-//         subscriptiontheme.addEventListener("click", () => {
-//           body.style.backgroundColor='darkgray';
-//         });
-
-//       }
-//     })
-//     .then((err) => {
-//       console.log(err);
-//     });
-// });
 
 
-// subscriptionbtn.addEventListener('click', buySubscription);
-
-// async function buySubscription(e){
-//         let token = localStorage.getItem("token");
-
-//     e.preventDefault();
-//         const response = await axios.get("http://localhost:8400/subscription", {
-//           headers: { authorization: token },
-//         });
-//         console.log(response);
-//         var options = {
-//           key: response.data.key_id, // Enter the Key ID generated from the Dashboard
-//           name: "siva tech",
-//           order_id: response.data.order.id, // For one time payment
-//           prefill: {
-//             name: "siva ",
-//             email: "siva@example.com",
-//             contact: "9347633052",
-//           },
-//           theme: {
-//             color: "#528FF0",
-//           },
-//           //  handle the success payment
-//           handler: function (response) {
-//             console.log(response);
-//             axios
-//               .post(
-//                 "http://localhost:8400/updatetransaction",
-//                 {
-//                   order_id: options.order_id,
-//                   payment_id: response.razorpay_payment_id,
-//                 },
-//                 { headers: { authorization: token } }
-//               )
-//               .then(() => {
-//                 alert("You are a Premium User Now");
-//               })
-//               .catch(() => {
-//                 alert("Something went wrong. Try Again!!!");
-//               });
-//           },
-//         };
-
-
-//       const rzp1 = new Razorpay(options);
-//       rzp1.open();
-//       e.preventDefault();
-
-//       rzp1.on('payment.failed', function (response){
-//         alert("payment failed");
-//         alert(response.error.description);
-//         alert(response.error.source);
-//         alert(response.error.step);
-//         alert(response.error.reason);
-//         alert(response.error.metadata.order_id);
-//         alert(response.error.metadata.payment_id);
-//     });
-
-//   }
-
-  expensedetails.addEventListener('click',(e)=>{
+expensedetails.addEventListener('click',(e)=>{
     let token=localStorage.getItem('token');
 
     if(e.target.classList.contains('fa-trash')){
